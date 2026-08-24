@@ -1,0 +1,73 @@
+2026-08-11 02:26:16,642:ERROR:remove_duplicates failed: 'dict' object has no attribute 'drop_duplicates'
+2026-08-11 02:26:45,220:ERROR:remove_duplicates failed: 'dict' object has no attribute 'drop_duplicates'
+2026-08-11 02:27:49,783:ERROR:remove_duplicates failed: 'dict' object has no attribute 'drop_duplicates'
+2026-08-11 02:29:09,491:ERROR:remove_duplicates failed: 'dict' object has no attribute 'drop_duplicates'
+2026-08-11 02:30:16,683:ERROR:remove_duplicates failed: 'dict' object has no attribute 'drop_duplicates'
+2026-08-11 02:31:21,658:ERROR:remove_duplicates failed: 'dict' object has no attribute 'drop_duplicates'
+2026-08-11 02:31:21,673:ERROR:remove_duplicates failed: 'dict' object has no attribute 'drop_duplicates'
+2026-08-11 02:32:30,729:ERROR:remove_duplicates failed: 'dict' object has no attribute 'drop_duplicates'
+2026-08-11 02:33:19,180:ERROR:remove_duplicates failed: 'dict' object has no attribute 'drop_duplicates'
+2026-08-11 02:34:21,603:ERROR:remove_duplicates failed: 'dict' object has no attribute 'drop_duplicates'
+2026-08-11 02:35:11,687:ERROR:remove_duplicates failed: 'dict' object has no attribute 'drop_duplicates'
+2026-08-11 02:42:32,462:ERROR:remove_duplicates failed: 'list' object has no attribute 'drop_duplicates'
+2026-08-11 02:42:58,149:ERROR:remove_duplicates failed: 'list' object has no attribute 'drop_duplicates'
+2026-08-11 03:32:59,021:ERROR:detect_outliers failed: not enough values to unpack (expected 2, got 1)
+2026-08-11 03:34:39,575:ERROR:detect_outliers failed: not enough values to unpack (expected 2, got 1)
+2026-08-11 03:36:06,211:ERROR:detect_outliers failed: not enough values to unpack (expected 2, got 1)
+2026-08-11 03:56:08,772:INFO:Successfully Loaded C:\Users\uo\depi task1\Sample - Superstore 2019.xls
+2026-08-11 03:56:08,773:ERROR:name 'Data' is not defined
+2026-08-11 03:56:36,220:INFO:Successfully Loaded C:\Users\uo\depi task1\Sample - Superstore 2019.xls
+2026-08-11 05:46:53,969:INFO:Successfully Loaded C:\Users\uo\depi task1\Sample - Superstore 2019.xls
+2026-08-11 06:30:11,884:INFO:Successfully Loaded C:\Users\uo\depi task1\Sample - Superstore 2019.xls
+2026-08-11 06:47:40,265:INFO:Successfully Loaded C:\Users\uo\depi task1\Sample - Superstore 2019.xls
+2026-08-11 07:13:41,102:INFO:Successfully Loaded C:\Users\uo\depi task1\Sample - Superstore 2019.xls
+2026-08-11 07:26:48,352:INFO:Successfully Loaded C:\Users\uo\depi task1\Sample - Superstore 2019.xls
+2026-08-11 07:51:15,313:INFO:Successfully Loaded C:\Users\uo\depi task1\Sample - Superstore 2019.xls
+2026-08-11 07:59:08,640:INFO:Successfully Loaded C:\Users\uo\depi task1\Sample - Superstore 2019.xls
+2026-08-11 08:01:16,142:INFO:Successfully Loaded C:\Users\uo\depi task1\Sample - Superstore 2019.xls
+2026-08-11 08:03:19,312:INFO:Successfully Loaded C:\Users\uo\depi task1\Sample - Superstore 2019.xls
+2026-08-11 08:33:42,931:INFO:Successfully Loaded C:\Users\uo\depi task1\Sample - Superstore 2019.xls
+2026-08-11 12:10:44,262:INFO:Successfully Loaded C:\Users\uo\depi task1\Sample - Superstore 2019.xls
+2026-08-11 12:43:52,158:INFO:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-08-11 12:43:53,248:INFO:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-08-11 12:44:14,568:INFO:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-08-11 12:44:14,594:INFO:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-08-11 14:45:56,040:INFO:Successfully Loaded C:\Users\uo\depi task1\Sample - Superstore 2019.xls
+2026-08-11 15:53:46,859:INFO:Successfully Loaded C:\Users\uo\depi task1\Sample - Superstore 2019.xls
+2026-08-11 16:37:55,339:INFO:Successfully Loaded C:\Users\uo\depi task1\Sample - Superstore 2019.xls
+2026-08-11 17:02:19,374:INFO:Successfully Loaded C:\Users\uo\depi task1\Sample - Superstore 2019.xls
+2026-08-11 17:03:02,272:INFO:Successfully Loaded C:\Users\uo\depi task1\Sample - Superstore 2019.xls
+2026-08-11 17:12:15,509:INFO:Saved Completed
+2026-08-11 17:12:47,124:INFO:Saved Completed
+2026-08-11 17:13:27,128:INFO:Analysis Completed
+2026-08-11 17:28:33,944:INFO:Successfully Loaded C:\Users\uo\depi task1\Sample - Superstore 2019.xls
+2026-08-11 17:29:03,308:INFO:Analysis Completed
+2026-08-11 20:29:28,366:INFO:Successfully Loaded C:\Users\uo\depi task1\Sample - Superstore 2019.xls
+2026-08-11 20:31:30,949:INFO:Analysis Completed
+2026-08-13 13:13:19,336:INFO:Successfully Loaded C:\Users\uo\depi task1\Sample - Superstore 2019.xls
+2026-08-13 13:13:39,743:INFO:Analysis Completed
+2026-08-22 19:35:44,985:ERROR:C:\Users\uo\depi task1\Sample - Superstore 2019.xls missing
+2026-08-22 19:37:03,156:ERROR:[Errno 22] Invalid argument: '"C:\\Users\\uo\\Python_Projects\\Depi_miniProject\\Datesets\\superstore_mini_project.csv"'
+2026-08-22 19:37:13,382:ERROR:Excel file format cannot be determined, you must specify an engine manually.
+2026-08-22 19:38:17,799:ERROR:Excel file format cannot be determined, you must specify an engine manually.
+2026-08-22 19:38:43,969:ERROR:read_csv() got an unexpected keyword argument 'sheet_name'
+2026-08-22 19:41:43,835:INFO:Successfully Loaded C:\Users\uo\Python_Projects\Depi_miniProject\Datesets\Sample - Superstore 2019.xls
+2026-08-22 20:00:31,988:ERROR:C:\Users\uo\depi task1\Sample - Superstore 2019.xls missing
+2026-08-22 20:06:42,670:ERROR:C:\Users\uo\depi task1\Sample - Superstore 2019.xls missing
+2026-08-22 20:08:07,765:INFO:Successfully Loaded C:\Users\uo\Python_Projects\Depi_miniProject\Datesets\Sample - Superstore 2019.xls
+2026-08-23 11:21:39,601:INFO:Successfully Loaded C:\Users\uo\Python_Projects\Depi_miniProject\Datesets\Sample - Superstore 2019.xls
+2026-08-23 12:23:22,046:ERROR:error_duplicates failed : object of type 'method' has no len()
+2026-08-23 12:28:26,063:INFO:Successfully Loaded C:\Users\uo\Python_Projects\Depi_miniProject\Datesets\Sample - Superstore 2019.xls
+2026-08-23 12:28:52,550:INFO:Analysis Completed
+2026-08-23 12:32:08,727:INFO:Successfully Loaded C:\Users\uo\Python_Projects\Depi_miniProject\Datesets\Sample - Superstore 2019.xls
+2026-08-23 12:32:20,420:INFO:Analysis Completed
+2026-08-23 13:09:37,531:INFO:Successfully Loaded C:\Users\uo\Python_Projects\Depi_miniProject\Datesets\Sample - Superstore 2019.xls
+2026-08-23 13:09:51,573:INFO:Analysis Completed
+2026-08-23 19:37:11,986:INFO:Successfully Loaded C:\Users\uo\Python_Projects\Depi_miniProject\Datesets\Sample - Superstore 2019.xls
+2026-08-23 19:37:37,037:INFO:Analysis Completed
+2026-08-24 11:40:53,721:INFO:Successfully Loaded C:\Users\uo\Python_Projects\Depi_miniProject\Datesets\Sample - Superstore 2019.xls
+2026-08-24 13:02:09,855:INFO:Successfully Loaded C:\Users\uo\Python_Projects\Depi_miniProject\Datesets\Sample - Superstore 2019.xls
+2026-08-24 13:02:44,770:INFO:Analysis Completed
+2026-08-24 14:13:05,637:INFO:Analysis Completed
+2026-08-24 14:17:06,972:INFO:Analysis Completed
+2026-08-24 14:27:18,508:INFO:Analysis Completed
