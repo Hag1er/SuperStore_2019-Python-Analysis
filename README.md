@@ -1,4 +1,4 @@
-# *🛒 Superstore Sales & Profitability Analysis*
+# 🛒 *Superstore Sales & Profitability Analysis*
 
 This project uses **Python** and **Pandas** to analyze Superstore sales data, uncover revenue drivers, and understand customer purchasing patterns.
 
