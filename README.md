@@ -1,15 +1,15 @@
-# 🛒 Superstore Sales & Profitability Analysis
+# *🛒 Superstore Sales & Profitability Analysis*
 
 This project uses **Python** and **Pandas** to analyze Superstore sales data, uncover revenue drivers, and understand customer purchasing patterns.
 
 
 
-##  Tools Used :-
-* **Language:** Python
-* **Libraries:** Pandas, NumPy, Matplotlib, Seaborn
+##  **Tools Used :-**
+* **Language:** *Python*
+* **Libraries:** *Pandas, NumPy, Matplotlib, Seaborn*
 
 
-## Project Objectives :-
+## **Project Objectives :-**
 
 * **1. Data Cleaning & Preparation** : Handling missing values, converting data types, and creating new derived features for analysis.
 * **2. Sales & Profitability Analysis** : Evaluating total sales, overall profit, performance across different product categories, and regional metrics.
@@ -17,7 +17,7 @@ This project uses **Python** and **Pandas** to analyze Superstore sales data, un
 
 
 
-##  Key Insights :-
+##  **Key Insights :-**
 
 * **Top Category:** **Technology** generates the highest total revenue.
 * **Regional Performance:** The **West** and **East** regions lead in total sales and profitability, whereas the **Central** region struggles with lower profit margins due to higher average discounts.
