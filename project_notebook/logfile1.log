@@ -71,3 +71,9 @@
 2026-08-24 14:13:05,637:INFO:Analysis Completed
 2026-08-24 14:17:06,972:INFO:Analysis Completed
 2026-08-24 14:27:18,508:INFO:Analysis Completed
+2026-09-04 09:18:56,700:ERROR:C:\Users\uo\Python_Projects\Depi_miniProject\Datesets\Sample - Superstore 2019.xls missing
+2026-09-26 15:39:01,316:ERROR:C:\Users\uo\Python_Projects\Depi_miniProject\Datesets\Sample - Superstore 2019.xls missing
+2026-09-26 15:40:19,699:ERROR:C:\Users\uo\Python_Projects\Depi_miniProject\Datesets\Sample - Superstore 2019.xls missing
+2026-09-26 15:41:08,670:ERROR:C:\Users\uo\Python_Projects\Depi_miniProject\Datesets\Sample - Superstore 2019.xls missing
+2026-09-26 15:42:34,692:INFO:Successfully Loaded C:\Users\uo\DataAnalysis_Projects\Python_Projects\Depi_miniProject\superstore_notebook\Datesets\Superstore 2019-rawdata.xls
+2026-09-26 15:42:56,174:INFO:Analysis Completed
