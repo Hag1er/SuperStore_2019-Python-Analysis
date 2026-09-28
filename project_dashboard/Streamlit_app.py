@@ -167,7 +167,7 @@ def load_data(file_path):
     return df
 
 # 05. Load Dataset
-file_path = r"C:\Users\uo\DataAnalysis_Projects\Python_Projects\Depi_miniProject\superstore_notebook\Datesets\Superstore 2019-rawdata.xls"
+file_path = r"Datesets\Superstore 2019-rawdata.xls"
 try:
     df = load_data(file_path)
 except Exception as e:
