@@ -4,7 +4,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-
+import os
 
 # 01. Page Configuration
 st.set_page_config(
@@ -167,7 +167,9 @@ def load_data(file_path):
     return df
 
 # 05. Load Dataset
-file_path = r"C:\Users\uo\DataAnalysis_Projects\Python_Projects\Depi_miniProject\superstore_notebook\Datesets\Superstore 2019-rawdata.xls"
+current_dir = os.path.dirname(os.path.abspath(__file__))
+file_path = os.path.join(current_dir, "Datasets", "Superstore 2019-rawdata.xls")
+
 try:
     df = load_data(file_path)
 except Exception as e:
