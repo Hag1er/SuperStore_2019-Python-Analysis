@@ -7,6 +7,7 @@ This project uses **Python** and **Pandas** to analyze Superstore sales data, un
 ##  **Tools Used :-**
 * **Language:** *Python*
 * **Libraries:** *Pandas, NumPy, Matplotlib, Seaborn*
+* **Dashboard:** *Python, Streamlit*
 
 
 ## **Project Objectives :-**
@@ -26,3 +27,6 @@ This project uses **Python** and **Pandas** to analyze Superstore sales data, un
 * **Customer Segments:** The **Consumer** segment contributes the largest share to total sales and profit, followed by **Corporate** and **Home Office**.
 * **Seasonal Sales Spikes:** Sales show a clear upward trend in **(November & December)** due to end-of-year seasonal demand and holiday shopping spikes.
 
+## **Project Github Page:-** 
+
+ https://hag1er.github.io/SuperStore_2019-Python-Analysis/
