@@ -87,6 +87,7 @@
         }
 
         /* Dashboard Iframe Container */
+        
         .dashboard-container {
             position: relative;
             width: 100%;
@@ -157,6 +158,13 @@
     height="850px" 
     style="border: none; border-radius: 8px;"
     allow="cross-origin-isolated">
+    ## 📊 Interactive Dashboard
+
+If the embedded dashboard does not load directly, click the button below to view it in full screen:
+
+<a href="https://your-app-name.streamlit.app" target="_blank" style="padding: 10px 20px; background-color: #ff4b4b; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin-bottom: 15px;">🚀 Open Dashboard in Full Screen</a>
+
+<iframe src="https://your-app-name.streamlit.app/?embed=true" width="100%" height="800px" frameborder="0" allowfullscreen></iframe>
 </iframe>
             </div>
         </div>
