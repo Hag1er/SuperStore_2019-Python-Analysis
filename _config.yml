@@ -1,3 +1,4 @@
 theme: jekyll-theme-cayman
-kramdown:
-  html_to_native: false
+title: Superstore Sales Performance Analysis
+description: End-to-End Data Analysis, Business Insights & Interactive Dashboard
+show_downloads: false
