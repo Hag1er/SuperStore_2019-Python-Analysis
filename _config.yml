@@ -1,4 +1,5 @@
 theme: jekyll-theme-cayman
 title: Superstore Sales Performance Analysis
-description: End-to-End Data Analysis, Business Insights & Interactive Dashboard
+description: A simple end-to-end data analysis project with an interactive dashboard
 show_downloads: false
+markdown: kramdown
