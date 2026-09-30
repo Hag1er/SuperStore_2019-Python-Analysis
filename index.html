@@ -228,18 +228,7 @@ const sh=S.sh==='ship';
 C.push(new Chart($('#c3'),{type:'bar',data:{labels:sh?['Same Day','First Class','Second Class','Standard']:['Office Supplies','Furniture','Technology'],datasets:[{data:sh?[0.04,2.18,3.24,5.01]:[234,136,123],backgroundColor:sh?[acc,acc,gold,a2]:[a2,gold,acc],borderRadius:6}]},options:opt(v=>sh?v+' days':v+' orders')}));
 }
 draw();
-// recommendations
-const R=[['profit','Furniture margin is only 2.5%','Review supplier costs and raise prices. Start with Tables, which lose money.'],
-['profit','Discounts lower profit and do not raise sales','Set a maximum discount, for example 20%, and ask for approval above it.'],
-['profit','Some products lose money','Check price and cost of 3D printers, some printers, and conference tables. Fix them or stop selling them.'],
-['profit','Central region has the lowest margin','Look at Central discounts and furniture costs. Learn from the West.'],
-['sales','Sales peak in September, November, December','Stock up early and plan campaigns before these months.'],
-['sales','January and February are slow','Run special offers to keep sales steady.'],
-['sales','A few states and cities drive most sales','Protect these markets. Test small campaigns in weaker states.'],
-['ops','Office Supplies has the most returns','Find the reasons (quality, wrong item, packaging) and fix the top ones.']];
-const tg={profit:'Profit',sales:'Sales',ops:'Operations'};
-$('#rl').innerHTML=R.map(r=>`<div class="card rec on" data-k="${r[0]}"><span class="tag">${tg[r[0]]}</span><h3 style="margin:10px 0 6px;font-size:18px">${r[1]}</h3><p style="margin:0;color:var(--mute)">${r[2]}</p></div>`).join('');
-chips('rf',v=>$$('.rec').forEach(e=>e.classList.toggle('on',v==='all'||e.dataset.k===v)));
+
 // active nav
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)$$('nav a').forEach(a=>a.classList.toggle('on',a.hash==='#'+e.target.id))}),{rootMargin:'-40% 0px -55% 0px'});
 $$('section').forEach(s=>io.observe(s));
