@@ -229,9 +229,6 @@ C.push(new Chart($('#c3'),{type:'bar',data:{labels:sh?['Same Day','First Class',
 }
 draw();
 
-// active nav
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)$$('nav a').forEach(a=>a.classList.toggle('on',a.hash==='#'+e.target.id))}),{rootMargin:'-40% 0px -55% 0px'});
-$$('section').forEach(s=>io.observe(s));
 </script>
 </body>
 </html>
