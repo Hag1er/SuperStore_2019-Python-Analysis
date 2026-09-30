@@ -45,7 +45,6 @@ th,td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left}th{co
 .ins.bad{border-color:var(--acc2)}.ins b{font-family:Sora}
 .tag{font-size:12px;font-weight:700;padding:2px 8px;border-radius:10px;background:var(--soft);color:var(--acc)}
 iframe{width:100%;height:850px;border:1px solid var(--line);border-radius:12px;background:#fff}
-.rec{display:none}.rec.on{display:block}
 footer{text-align:center;color:var(--mute);padding:40px 20px}
 @media(max-width:600px){nav a{padding:6px 8px}.chart{height:260px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -54,13 +53,13 @@ footer{text-align:center;color:var(--mute);padding:40px 20px}
 <body>
 <nav>
 <b>Superstore Analysis</b>
-<a href="#project">Project</a><a href="#workflow">Workflow</a><a href="#insights">Insights</a><a href="#dashboard">Dashboard</a><a href="#recs">Recommendations</a>
+<a href="#project">Project</a><a href="#workflow">Workflow</a><a href="#insights">Insights</a><a href="#dashboard">Dashboard</a>
 <button id="theme" aria-label="Switch light and dark theme">Dark mode</button>
 </nav>
 
 <header class="hero"><div class="wrap">
 <h1>Where does a US retail chain make money, and where does it lose it?</h1>
-<p>An end-to-end analysis of 9,994 order lines from 2016 to 2019: data cleaning, insights, an interactive dashboard, and recommendations.</p>
+<p>An end-to-end analysis of 9,994 order lines from 2016 to 2019: data cleaning, insights, and an interactive dashboard.</p>
 </div></header>
 
 <div class="wrap"><div class="kpis">
@@ -176,13 +175,6 @@ footer{text-align:center;color:var(--mute);padding:40px 20px}
 <p style="text-align:center"><a href="https://superstore2019-dashboard.streamlit.app/" target="_blank" rel="noopener" style="color:var(--acc)">Open the dashboard in a new tab</a></p>
 </div></section>
 
-<section id="recs"><div class="wrap">
-<h2>Recommendations</h2>
-<p class="lead">Filter by the area you care about.</p>
-<div class="chips" id="rf"><button class="on" data-v="all">All</button><button data-v="profit">Profit</button><button data-v="sales">Sales</button><button data-v="ops">Operations</button></div>
-<div class="grid" id="rl"></div>
-</div></section>
-
 <footer>Superstore Analysis Portfolio Project · Hagar Gamal<br>Python, pandas, Streamlit, Plotly, Chart.js</footer>
 
 <script>
@@ -228,7 +220,9 @@ const sh=S.sh==='ship';
 C.push(new Chart($('#c3'),{type:'bar',data:{labels:sh?['Same Day','First Class','Second Class','Standard']:['Office Supplies','Furniture','Technology'],datasets:[{data:sh?[0.04,2.18,3.24,5.01]:[234,136,123],backgroundColor:sh?[acc,acc,gold,a2]:[a2,gold,acc],borderRadius:6}]},options:opt(v=>sh?v+' days':v+' orders')}));
 }
 draw();
-
+// active nav
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)$$('nav a').forEach(a=>a.classList.toggle('on',a.hash==='#'+e.target.id))}),{rootMargin:'-40% 0px -55% 0px'});
+$$('section').forEach(s=>io.observe(s));
 </script>
 </body>
 </html>
