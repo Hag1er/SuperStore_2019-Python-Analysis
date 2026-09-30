@@ -1,0 +1,234 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Superstore Sales Performance Analysis</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{--bg:#F2F6F9;--card:#fff;--ink:#12202F;--mute:#5B6B7C;--line:#DCE4EB;--acc:#0E8F7E;--acc2:#E4572E;--gold:#E3A008;--soft:#E5F4F1}
+:root[data-theme=dark]{--bg:#0B141F;--card:#122030;--ink:#E8EFF5;--mute:#93A4B5;--line:#223449;--acc:#2DD4BF;--acc2:#FB7B58;--gold:#F5C542;--soft:#12303A}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 'Nunito Sans',sans-serif}
+h1,h2,h3{font-family:Sora,sans-serif;line-height:1.2;margin:0}
+nav{position:sticky;top:0;z-index:9;display:flex;gap:6px;align-items:center;padding:10px 20px;background:var(--card);border-bottom:1px solid var(--line);overflow-x:auto}
+nav b{font-family:Sora;margin-right:auto;white-space:nowrap}
+nav a{color:var(--mute);text-decoration:none;padding:6px 12px;border-radius:20px;font-weight:600;font-size:14px;white-space:nowrap}
+nav a:hover,nav a.on{background:var(--soft);color:var(--acc)}
+button{font:inherit;cursor:pointer}
+#theme{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:20px;padding:5px 12px}
+.hero{padding:64px 20px 48px;background:linear-gradient(120deg,#0B2A3D,#0E8F7E);color:#fff}
+.wrap{max-width:1100px;margin:0 auto}
+.hero h1{font-size:clamp(28px,5vw,48px);max-width:800px}
+.hero p{max-width:640px;font-size:18px;opacity:.9;margin:14px 0 0}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:-34px;position:relative}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.kpi span{color:var(--mute);font-size:13px}.kpi strong{display:block;font:800 26px Sora;color:var(--acc)}
+section{padding:56px 20px 8px}
+section h2{font-size:28px;margin-bottom:6px}.lead{color:var(--mute);margin:0 0 24px;max-width:680px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.tabs,.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.tabs button,.chips button{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:8px 14px;border-radius:8px;font-weight:600}
+.tabs button.on,.chips button.on{background:var(--acc);border-color:var(--acc);color:#062B26}
+.pane{display:none}.pane.on{display:block}
+.pane h3{margin-bottom:10px}.pane ul{margin:0;padding-left:20px}
+table{border-collapse:collapse;width:100%;font-size:15px;margin-top:10px}
+th,td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left}th{color:var(--mute);font-weight:700}
+.chart{height:300px;position:relative}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;margin-bottom:16px}
+.ins{border-left:4px solid var(--acc);padding-left:14px;margin-top:14px}
+.ins.bad{border-color:var(--acc2)}.ins b{font-family:Sora}
+.tag{font-size:12px;font-weight:700;padding:2px 8px;border-radius:10px;background:var(--soft);color:var(--acc)}
+iframe{width:100%;height:850px;border:1px solid var(--line);border-radius:12px;background:#fff}
+.rec{display:none}.rec.on{display:block}
+footer{text-align:center;color:var(--mute);padding:40px 20px}
+@media(max-width:600px){nav a{padding:6px 8px}.chart{height:260px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav>
+<b>Superstore Analysis</b>
+<a href="#project">Project</a><a href="#workflow">Workflow</a><a href="#insights">Insights</a><a href="#dashboard">Dashboard</a><a href="#recs">Recommendations</a>
+<button id="theme" aria-label="Switch light and dark theme">Dark mode</button>
+</nav>
+
+<header class="hero"><div class="wrap">
+<h1>Where does a US retail chain make money, and where does it lose it?</h1>
+<p>An end-to-end analysis of 9,994 order lines from 2016 to 2019: data cleaning, insights, an interactive dashboard, and recommendations.</p>
+</div></header>
+
+<div class="wrap"><div class="kpis">
+<div class="kpi"><span>Total sales</span><strong data-n="2297201" data-p="$">0</strong></div>
+<div class="kpi"><span>Total profit</span><strong data-n="286397" data-p="$">0</strong></div>
+<div class="kpi"><span>Profit margin</span><strong data-n="12.5" data-s="%" data-d="1">0</strong></div>
+<div class="kpi"><span>Orders</span><strong data-n="5009">0</strong></div>
+<div class="kpi"><span>Customers</span><strong data-n="793">0</strong></div>
+<div class="kpi"><span>Returned orders</span><strong data-n="5.9" data-s="%" data-d="1">0</strong></div>
+</div></div>
+
+<section id="project"><div class="wrap">
+<h2>The project</h2>
+<p class="lead">A retail company sells furniture, office supplies, and technology across the United States. It needs to know which products, places, and habits make profit, and which lose it.</p>
+<div class="grid">
+<div class="card"><h3>The data</h3><table>
+<tr><th>Sheet</th><th>Contains</th><th>Size</th></tr>
+<tr><td>Orders</td><td>Products sold, dates, customers, places, sales, discount, profit</td><td>9,994 rows</td></tr>
+<tr><td>People</td><td>Manager of each region</td><td>4 rows</td></tr>
+<tr><td>Returns</td><td>Orders sent back</td><td>800 rows</td></tr></table>
+<p style="color:var(--mute);margin-bottom:0">Time period: 3 Jan 2016 to 30 Dec 2019.</p></div>
+<div class="card"><h3>Questions I answered</h3><ul style="padding-left:20px;margin:0">
+<li>Which category earns the most sales and profit?</li>
+<li>Which sub-categories sell best, and which lose money?</li>
+<li>Which regions and states perform best?</li>
+<li>What affects profit the most?</li>
+<li>Which category has the most returns?</li>
+<li>Which shipping mode is fastest and most used?</li>
+<li>How do sales change over time?</li></ul></div>
+</div></div></section>
+
+<section id="workflow"><div class="wrap">
+<h2>The workflow</h2>
+<p class="lead">Six steps from raw Excel file to dashboard. Choose a step to see what I did.</p>
+<div class="tabs" id="wtabs"></div>
+<div class="card">
+<div class="pane on"><h3>1. Data profiling: get to know the data</h3><ul>
+<li>Loaded the three sheets with Python (pandas).</li>
+<li>Checked the shape, data types, and unique values of every column.</li>
+<li>Checked the dates: orders run from January 2016 to December 2019.</li>
+<li>Checked missing values: only <code>Postal Code</code> had any, 11 rows (0.11%).</li>
+<li>Checked correlations between Sales, Quantity, Discount, and Profit.</li>
+<li>Found that the Returns sheet has 800 rows but only 296 different orders, so it has repeats.</li></ul>
+<p><b>Result:</b> the data is in good shape and needs only small fixes.</p></div>
+<div class="pane"><h3>2. Data cleaning: fix the problems</h3><table>
+<tr><th>Problem</th><th>What I did</th></tr>
+<tr><td>Column names with symbols</td><td>Renamed <code>Sub-Category</code> and <code>Country/Region</code></td></tr>
+<tr><td>Postal Code and Row ID were numbers</td><td>Changed to text, because we never do math on them</td></tr>
+<tr><td>11 missing postal codes</td><td>All were Burlington, Vermont. Filled with its main code, 05401</td></tr>
+<tr><td>Outliers in Sales, Discount, Profit</td><td>Checked them. They are expensive items such as machines and phones, so they are real. Kept them</td></tr>
+<tr><td>504 duplicate rows in Returns</td><td>Removed. 296 unique returned orders remain</td></tr></table></div>
+<div class="pane"><h3>3. Data manipulation: join the sheets</h3><ul>
+<li>Joined Orders and People on <code>Region</code>, so each order shows its manager.</li>
+<li>Joined the result with Returns on <code>Order ID</code>.</li>
+<li>Orders with no match in Returns were marked <code>Returned = No</code>.</li></ul>
+<p>The final table keeps all 9,994 rows and adds the manager and the return status.</p></div>
+<div class="pane"><h3>4. Feature engineering: create useful columns</h3><table>
+<tr><th>New column</th><th>Calculation</th><th>Why</th></tr>
+<tr><td>Discount Percentage</td><td>Discount × 100</td><td>Easier to read</td></tr>
+<tr><td>Total Cost</td><td>Sales − Profit</td><td>What the sale cost us</td></tr>
+<tr><td>Unit Price / Unit Cost</td><td>Sales or Cost ÷ Quantity</td><td>Price and cost of one item</td></tr>
+<tr><td>Profit Margin</td><td>Profit ÷ Sales × 100</td><td>How profitable a sale is</td></tr>
+<tr><td>Shipping Duration</td><td>Ship Date − Order Date</td><td>Delivery speed in days</td></tr>
+<tr><td>Year, Month</td><td>From Order Date</td><td>Trends and seasons</td></tr>
+<tr><td>Sales Performance</td><td>Low, Medium, High, Very High (by quartiles)</td><td>Groups sales by size</td></tr></table></div>
+<div class="pane"><h3>5. Exploratory analysis: ask questions</h3><ul>
+<li>Used <code>groupby</code> and pivot tables for best products, cities, states, years, and months.</li>
+<li>Compared category performance inside each region.</li>
+<li>Counted returns by category and compared shipping modes.</li>
+<li>Drew a correlation heatmap to see which numbers move together.</li></ul></div>
+<div class="pane"><h3>6. Visualization and dashboard</h3><ul>
+<li>Made charts with Matplotlib and Seaborn: pie, bar, line, and heatmap.</li>
+<li>Built a Streamlit and Plotly dashboard with filters for Region, Category, and Segment.</li>
+<li>Embedded it on this page in the <a href="#dashboard" style="color:var(--acc)">Dashboard</a> section.</li></ul></div>
+</div></div></section>
+
+<section id="insights"><div class="wrap">
+<h2>Key insights</h2>
+<p class="lead">Use the buttons on each chart to change what you see.</p>
+
+<div class="two">
+<div class="card"><h3>Category and region</h3>
+<div class="chips" id="grp"><button class="on" data-v="cat">By category</button><button data-v="reg">By region</button></div>
+<div class="chips" id="met"><button class="on" data-v="sales">Sales</button><button data-v="profit">Profit</button><button data-v="margin">Margin %</button></div>
+<div class="chart"><canvas id="c1"></canvas></div>
+<div class="ins"><b>Furniture sells a lot but keeps little.</b> Its margin is 2.5%, against 17% for Technology and Office Supplies. Central is the weakest region at 7.9%.</div></div>
+
+<div class="card"><h3>Sales over time</h3>
+<div class="chips" id="yr"><button class="on" data-v="all">All years</button><button data-v="0">2016</button><button data-v="1">2017</button><button data-v="2">2018</button><button data-v="3">2019</button></div>
+<div class="chart"><canvas id="c2"></canvas></div>
+<div class="ins"><b>Sales peak in September, November, and December.</b> Those three months bring about 43% of all sales. 2019 was 56% higher than 2017.</div></div>
+</div>
+
+<div class="two">
+<div class="card"><h3>Shipping speed and returns</h3>
+<div class="chips" id="sh"><button class="on" data-v="ship">Days to deliver</button><button data-v="ret">Returned orders</button></div>
+<div class="chart"><canvas id="c3"></canvas></div>
+<div class="ins"><b>Same Day is fastest (0.04 days).</b> Standard Class is used most, in about 60% of order lines. 296 orders (5.9%) were returned, most of them Office Supplies.</div></div>
+
+<div class="card"><h3>More findings</h3>
+<div class="ins bad"><b>Discounts hurt profit.</b> Discount and Profit correlate at −0.22, while Discount and Sales barely relate (−0.03). Average discount is 15.6%, up to 80%.</div>
+<div class="ins bad"><b>Tables lose over $15,000</b> although they are a top-5 seller. The Cubify CubeX 3D Printer (double head) loses $8,880.</div>
+<div class="ins"><b>Best product:</b> Canon imageCLASS 2200 Copier, $61,600 in sales and $25,200 profit.</div>
+<div class="ins"><b>Top states:</b> California ($458K), New York ($311K), Texas ($170K). <b>Top cities:</b> New York City ($256K), Los Angeles ($176K), Seattle ($120K).</div>
+<div class="ins bad"><b>Central Furniture loses money</b> (−$2,871), even though Central has more sales than the South.</div></div>
+</div>
+</div></section>
+
+<section id="dashboard"><div class="wrap">
+<h2>Interactive dashboard</h2>
+<p class="lead">Filter by Region, Category, and Segment to explore the data yourself. If the app is asleep, wait a few seconds for it to wake up.</p>
+<iframe src="https://superstore2019-dashboard.streamlit.app/?embed=true" title="Superstore Dashboard" loading="lazy"></iframe>
+<p style="text-align:center"><a href="https://superstore2019-dashboard.streamlit.app/" target="_blank" rel="noopener" style="color:var(--acc)">Open the dashboard in a new tab</a></p>
+</div></section>
+
+<section id="recs"><div class="wrap">
+<h2>Recommendations</h2>
+<p class="lead">Filter by the area you care about.</p>
+<div class="chips" id="rf"><button class="on" data-v="all">All</button><button data-v="profit">Profit</button><button data-v="sales">Sales</button><button data-v="ops">Operations</button></div>
+<div class="grid" id="rl"></div>
+</div></section>
+
+<footer>Superstore Analysis Portfolio Project · Hagar Gamal<br>Python, pandas, Streamlit, Plotly, Chart.js</footer>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+// theme
+const root=document.documentElement;
+try{const t=localStorage.getItem('t');if(t)root.dataset.theme=t}catch(e){}
+function label(){$('#theme').textContent=root.dataset.theme==='dark'?'Light mode':'Dark mode'}label();
+$('#theme').onclick=()=>{root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem('t',root.dataset.theme)}catch(e){}label();draw()};
+// count-up
+$$('.kpi strong').forEach(e=>{const n=+e.dataset.n,d=+e.dataset.d||0,p=e.dataset.p||'',s=e.dataset.s||'';let k=0;
+const f=()=>{k=Math.min(1,k+.04);const v=n*(1-Math.pow(1-k,3));e.textContent=p+v.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d})+s;if(k<1)requestAnimationFrame(f)};f()});
+// tabs
+const T=['1. Profiling','2. Cleaning','3. Manipulation','4. Features','5. Analysis','6. Dashboard'];
+T.forEach((t,i)=>{const b=document.createElement('button');b.textContent=t;if(!i)b.className='on';b.onclick=()=>{$$('#wtabs button').forEach((x,j)=>x.classList.toggle('on',i===j));$$('.pane').forEach((x,j)=>x.classList.toggle('on',i===j))};$('#wtabs').append(b)});
+// chips helper
+function chips(id,cb){$$('#'+id+' button').forEach(b=>b.onclick=()=>{$$('#'+id+' button').forEach(x=>x.classList.remove('on'));b.classList.add('on');cb(b.dataset.v)})}
+const S={grp:'cat',met:'sales',yr:'all',sh:'ship'};
+chips('grp',v=>{S.grp=v;draw()});chips('met',v=>{S.met=v;draw()});chips('yr',v=>{S.yr=v;draw()});chips('sh',v=>{S.sh=v;draw()});
+// data
+const D={cat:{l:['Technology','Office Supplies','Furniture'],s:[836154,719047,741999],p:[145455,122491,18451]},
+reg:{l:['West','East','Central','South'],s:[725458,678781,501240,391722],p:[108418,91523,39706,46749]}};
+const M=[[14237,4520,55691,28295,23648,34595,33946,27909,81777,31453,78629,69546],[18174,11951,38726,34195,30132,24797,28765,36898,64596,31405,75973,74920],[18542,22979,51716,38750,56988,40345,39262,31115,73410,59688,79412,96999],[43971,20301,58872,36522,44261,52982,45264,63121,87867,77777,118448,83829]];
+const MN=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+let C=[];
+function draw(){C.forEach(c=>c.destroy());C=[];
+const cs=getComputedStyle(root),ink=cs.getPropertyValue('--mute'),line=cs.getPropertyValue('--line'),acc=cs.getPropertyValue('--acc').trim(),a2=cs.getPropertyValue('--acc2').trim(),gold=cs.getPropertyValue('--gold').trim();
+Chart.defaults.color=ink;Chart.defaults.font.family='Nunito Sans';
+const opt=(fmt)=>({maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>fmt(c.parsed.y)}}},scales:{x:{grid:{display:false}},y:{grid:{color:line},ticks:{callback:v=>fmt(v)}}}});
+const $k=v=>'$'+Math.round(v/1000)+'K';
+// chart 1
+const g=D[S.grp];let data,fmt,col=acc;
+if(S.met==='margin'){data=g.s.map((s,i)=>+(g.p[i]/s*100).toFixed(1));fmt=v=>v+'%';col=data.map(v=>v<10?a2:acc)}
+else{data=S.met==='sales'?g.s:g.p;fmt=$k;if(S.met==='profit')col=data.map(v=>v<25000?a2:acc)}
+C.push(new Chart($('#c1'),{type:'bar',data:{labels:g.l,datasets:[{data,backgroundColor:col,borderRadius:6}]},options:opt(fmt)}));
+// chart 2
+let ds;
+if(S.yr==='all'){ds=[{data:M[0].map((_,m)=>M.reduce((a,y)=>a+y[m],0)),borderColor:acc,backgroundColor:acc+'33',fill:true,tension:.3}]}
+else ds=[{data:M[+S.yr],borderColor:gold,backgroundColor:gold+'33',fill:true,tension:.3}];
+C.push(new Chart($('#c2'),{type:'line',data:{labels:MN,datasets:ds},options:opt($k)}));
+// chart 3
+const sh=S.sh==='ship';
+C.push(new Chart($('#c3'),{type:'bar',data:{labels:sh?['Same Day','First Class','Second Class','Standard']:['Office Supplies','Furniture','Technology'],datasets:[{data:sh?[0.04,2.18,3.24,5.01]:[234,136,123],backgroundColor:sh?[acc,acc,gold,a2]:[a2,gold,acc],borderRadius:6}]},options:opt(v=>sh?v+' days':v+' orders')}));
+}
+draw();
+
+</script>
+</body>
+</html>
