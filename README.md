@@ -25,3 +25,4 @@ This project uses **Python** and **Pandas** to analyze Superstore sales data, un
 * **Shipping Preferences:** **Standard Class** is the most frequently chosen shipping mode across all customer segments.
 * **Customer Segments:** The **Consumer** segment contributes the largest share to total sales and profit, followed by **Corporate** and **Home Office**.
 * **Seasonal Sales Spikes:** Sales show a clear upward trend in **(November & December)** due to end-of-year seasonal demand and holiday shopping spikes.
+
