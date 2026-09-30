@@ -26,10 +26,3 @@ This project uses **Python** and **Pandas** to analyze Superstore sales data, un
 * **Customer Segments:** The **Consumer** segment contributes the largest share to total sales and profit, followed by **Corporate** and **Home Office**.
 * **Seasonal Sales Spikes:** Sales show a clear upward trend in **(November & December)** due to end-of-year seasonal demand and holiday shopping spikes.
 
-## 📊 Interactive Dashboard
-
-If the embedded dashboard does not load directly, click the button below to view it in full screen:
-
-<a href="https://your-app-name.streamlit.app" target="_blank" style="padding: 10px 20px; background-color: #ff4b4b; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin-bottom: 15px;">🚀 Open Dashboard in Full Screen</a>
-
-<iframe src="https://your-app-name.streamlit.app/?embed=true" width="100%" height="800px" frameborder="0" allowfullscreen></iframe>
